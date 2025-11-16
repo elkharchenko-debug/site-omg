@@ -1,0 +1,275 @@
+/*
+ * СТИЛИ ДЛЯ СТРАНИЦ "ЗАДАЧИ" (01, 02, 03)
+ */
+ 
+body {
+    background-image: url(../images/Иллюстрация_без_названия\ 170.png);
+    font-family: 'PP Mondwest', monospace;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 30px;
+    color: #ffffff;
+    font-family: 'PP Mondwest', monospace;
+}
+
+.navigation {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.navigation .current {
+    text-decoration: underline;
+    color: #ffd452;
+}
+.navigation a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.navigation a:hover {
+    color: #ffd452;
+    transform: translateY(-2px);
+}
+
+.content {
+    color: #ffffff;
+}
+
+.task-title {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/*
+ * НОВЫЙ ДИЗАЙН ПАСПОРТА
+ */
+.passport-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #6a0000;
+    border: 1px solid #c9a000;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4), 
+                inset 0 0 15px rgba(0,0,0,0.3);
+    color: #f0f0f0;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    overflow: hidden; /* Важно для ::before */
+}
+
+.passport-container::before {
+    content: '\2606';
+    font-size: 3rem;
+    color: #c9a000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.passport-container h2 {
+    color: #ffd452;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'PP Mondwest', monospace;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(255, 212, 82, 0.5);
+    border-bottom: 1px dashed #c9a000;
+    padding-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.passport-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+    background: rgba(244, 244, 244, 0.9);
+    color: #333;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.passport-photo {
+    flex: 1;
+    min-width: 150px;
+    padding-right: 20px;
+}
+.passport-photo img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    cursor: zoom-in;
+}
+
+.passport-info {
+    flex: 2;
+    min-width: 300px;
+}
+.passport-info p {
+    color: #333;
+    margin-bottom: 12px;
+    border-bottom: 1px dotted #aaa;
+}
+.passport-info p b {
+    color: #000;
+}
+
+.passport-footer {
+    padding: 10px 15px;
+    position: relative;
+    z-index: 2;
+    /* Фон для футера паспорта */
+    background: rgba(244, 244, 244, 0.9);
+    color: #333;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+.passport-footer p {
+    color: #333;
+}
+.passport-footer #for_click {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.passport-footer #for_click:hover {
+    color: #0056b3;
+}
+.passport-footer .signature {
+    color: #333;
+    font-family: 'Brush Script MT', 'cursive';
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+
+/*
+ * Стиль "панели" для калькулятора (на 03)
+ */
+.calculator-panel {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #ffd452;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0;
+}
+.calculator-panel h2 {
+    color: #ffd452;
+    text-align: center;
+    font-family: 'PP Mondwest', monospace;
+}
+.calculator-panel p {
+    color: #f0f0f0;
+}
+.calculator-panel input[type="number"] {
+    background: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    caret-color: #ffd452;
+}
+.calculator-panel input[type="number"]:focus {
+    outline: none;
+    border-color: #ffd452;
+}
+
+#result {
+    border: 1px solid #ffd452;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100% !important;
+    box-sizing: border-box;
+    min-height: 40px;
+    color: #ffd452;
+    background: #2a2a2a;
+}
+
+
+/*
+ * =========================================
+ * МОБИЛЬНАЯ АДАПТАЦИЯ (800px и меньше)
+ * =========================================
+ */
+@media (max-width: 800px) {
+    body {
+        padding: 10px;
+    }
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .navigation {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    .navigation a {
+        margin: 0 10px;
+    }
+    .task-title {
+        font-size: 1.2rem;
+    }
+
+    /* Адаптация Паспорта */
+    .passport-container {
+        padding: 10px;
+    }
+    .passport-content {
+        flex-direction: column; /* Ставим фото над текстом */
+        align-items: center;
+        padding: 10px;
+    }
+    .passport-photo {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .passport-info {
+        min-width: 100%;
+    }
+    
+    /* Адаптация Калькулятора */
+    .calculator-panel {
+        width: 98%;
+        padding: 15px;
+    }
+    .calculator-panel h2 {
+        font-size: 1.5rem;
+    }
+}

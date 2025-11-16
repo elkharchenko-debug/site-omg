@@ -1,0 +1,199 @@
+/*
+ * СТИЛИ ДЛЯ СТРАНИЦЫ "РАЦИЯ" (Форма "Давай Дружить")
+ */
+
+/* 1. Анимация для кнопки "Отправить" */
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px 0 rgba(255, 212, 82, 0.4); }
+    70% { box-shadow: 0 0 15px 5px rgba(255, 212, 82, 0.0); }
+    100% { box-shadow: 0 0 5px 0 rgba(255, 212, 82, 0.4); }
+}
+
+/* 2. Контейнер формы ("Панель Управления") */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+    padding-bottom: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #ffd452;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0;
+}
+
+/* 3. Заголовок "Давай дружить" */
+form p:first-child b {
+    font-family: 'PP Mondwest', monospace;
+    font-size: 2.5rem;
+    color: #ffd452;
+    text-shadow: 0 0 10px rgba(255, 212, 82, 0.5);
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* 4. Группы полей (теги <p>) */
+form p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* 5. Стилизация полей ввода (input, textarea, select) */
+input[type="text"],
+input[type="Number"],
+input[type="date"],
+input[type="Password"],
+textarea,
+select {
+    background: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    caret-color: #ffd452;
+}
+
+input[type="text"]:focus,
+input[type="Number"]:focus,
+input[type="date"]:focus,
+input[type="Password"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #ffd452;
+    box-shadow: 0 0 10px rgba(255, 212, 82, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* 6. Кастомные Radio и Checkbox */
+input[type="Radio"],
+input[type="Checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #2a2a2a;
+    border: 1px solid #555;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+input[type="Radio"] {
+    border-radius: 50%;
+}
+input[type="Checkbox"] {
+    border-radius: 3px;
+}
+input[type="Radio"]:hover,
+input[type="Checkbox"]:hover {
+    border-color: #ffd452;
+}
+input[type="Radio"]::after,
+input[type="Checkbox"]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+input[type="Radio"]::after {
+    width: 8px;
+    height: 8px;
+    background: #ffd452;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+}
+input[type="Checkbox"]::after {
+    width: 4px;
+    height: 8px;
+    border: solid #ffd452;
+    border-width: 0 2px 2px 0;
+    top: 1px;
+    left: 5px;
+    transform: rotate(45deg) scale(0);
+}
+input[type="Radio"]:checked::after,
+input[type="Checkbox"]:checked::after {
+    transform: scale(1);
+}
+input[type="Checkbox"]:checked::after {
+     transform: rotate(45deg) scale(1);
+}
+
+/* 7. Кнопки (Пульсация) */
+input[type="Reset"],
+input[type="Submit"] {
+    padding: 12px 22px;
+    background-color: #ffd452;
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+input[type="Submit"] {
+    animation: pulse 2s infinite;
+}
+input[type="Reset"]:hover,
+input[type="Submit"]:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation-play-state: paused;
+}
+input[type="Reset"] {
+    background-color: #555;
+    color: #f0f0f0;
+}
+input[type="Reset"]:hover {
+    background-color: #777;
+}
+
+
+/*
+ * =========================================
+ * МОБИЛЬНАЯ АДАПТАЦИЯ (800px и меньше)
+ * =========================================
+ */
+@media (max-width: 800px) {
+    form {
+        width: 98%;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    
+    form p:first-child b {
+        font-size: 1.8rem;
+    }
+    
+    /* Делаем чекбоксы и радио-кнопки в столбик для удобства */
+    form p label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    input[type="Reset"],
+    input[type="Submit"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
